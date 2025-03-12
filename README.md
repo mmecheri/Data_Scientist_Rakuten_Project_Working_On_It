@@ -70,6 +70,5 @@ Since this project is still under development, the full pipeline is not yet fina
 - **Steps for AWS deployment** including model serving and API setup.  
 
 ## Stay Updated  
-This project is actively being improved. Check back for updates or contribute if interested.  
+This project is actively being improved. Check back for updates.  
 
-For any questions or suggestions, feel free to open an issue or reach out.
