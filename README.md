@@ -1,7 +1,7 @@
 # Data Scientist Rakuten Project - Work in Progress
 
 ## Project Status  
-This project is currently **under development**. The goal is to refine and improve the existing model for multimodal product classification. Updates will be made progressively as enhancements are implemented.
+This project is currently **under development**. The goal is to **restructure the project and codebase** to enable **deployment on AWS Cloud** while refining and improving the existing model for multimodal product classification. Updates will be made progressively as enhancements are implemented.
 
 ## Streamlit Application  
 The first version of the **interactive Streamlit application**, which presents the project, different modeling steps, and results, is hosted on Hugging Face:  
@@ -19,6 +19,7 @@ Originally developed as part of a **challenge** in a Data Scientist training pro
 - Optimize **text-based** classification using machine learning and deep learning.  
 - Enhance **image-based** classification using convolutional neural networks (CNNs) and transfer learning.  
 - Develop a robust **bimodal approach** combining both text and image models.  
+- **Restructure and optimize the project for deployment on AWS Cloud**.  
 
 ## Dataset  
 Rakuten France provides a dataset of approximately **99,000 product listings**, split into:  
@@ -49,6 +50,7 @@ Rakuten France provides a dataset of approximately **99,000 product listings**, 
 - Fine-tuning image models and exploring data augmentation.  
 - Enhancing bimodal fusion strategies for better classification.  
 - Deploying an updated interactive **Streamlit demo** (coming soon).  
+- **Adapting and restructuring the project for cloud deployment on AWS**.  
 
 ## Baseline Results  
 | Model | Data Type | Weighted F1-score |  
@@ -57,7 +59,7 @@ Rakuten France provides a dataset of approximately **99,000 product listings**, 
 | **ResNet** | Images | 0.5534 |  
 | **Best Multimodal (Initial Submission)** | Text + Image | **0.8349** (Rank #25/83) |  
 
-**Goal:** Improve beyond **0.8349** F1-score with optimized models.  
+**Goal:** Improve beyond **0.8349** F1-score with optimized models and deploy them on AWS.  
 
 ## How to Use (Once Ready)  
 Since this project is still under development, the full pipeline is not yet finalized. Once the improvements are completed, the repository will include:  
@@ -65,6 +67,7 @@ Since this project is still under development, the full pipeline is not yet fina
 - Scripts for preprocessing and feature engineering.  
 - Instructions to reproduce experiments.  
 - Deployment guide for the **Streamlit app**.  
+- **Steps for AWS deployment** including model serving and API setup.  
 
 ## Stay Updated  
 This project is actively being improved. Check back for updates or contribute if interested.  
