@@ -65,8 +65,7 @@ Rakuten France provides a dataset of approximately **99,000 product listings**, 
 Since this project is still under development, the full pipeline is not yet finalized. Once the improvements are completed, the repository will include:  
 - Code for training and evaluating models.  
 - Scripts for preprocessing and feature engineering.  
-- Instructions to reproduce experiments.  
-- Deployment guide for the **Streamlit app**.  
+- Instructions to reproduce experiments.   
 - **Steps for AWS deployment** including model serving and API setup.  
 
 ## Stay Updated  
