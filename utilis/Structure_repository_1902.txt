@@ -1,0 +1,204 @@
+
+**********************************************************************
+PLAN struture DEFNI
+**********************************************************************
+D:\Data_Science\Append_Data_Engineer_AWS_MLOPS\Data_Scientist_Rakuten_Project-main
+📄 LICENSE
+📄 README.md
+📂 data/  # 📌 Contains all datasets (raw, processed, and intermediate)
+│   📂 interim/  # 📌 Intermediate data (cleaned but not final)
+│   │   📄 X_full_train.pkl  # Merged intermediate training dataset
+│   │   📄 X_test.pkl  # Intermediate test dataset
+│   │   📄 X_test_cleaned.pkl  # Cleaned version of test data
+│   │   📄 X_test_img.pkl  # Intermediate test dataset (images metadata)
+│   │   📄 X_train_cleaned.pkl  # Cleaned version of training data
+│   │   📄 X_train_img.pkl  # Intermediate training dataset (images metadata)
+│   │   📄 X_train_labeled.pkl  # Cleaned training dataset with labels
+│   │   📄 y_train.pkl  # Target labels for training
+│   📂 processed/  # 📌 Final datasets ready for modeling
+│   │   📄 X_test_final.pkl  # Final test dataset (combined text + images)
+│   │   📄 X_train_final.pkl  # Final training dataset (combined text + images)
+│   │   📂 text/  # 📌 Processed text data
+│   │   │   📄 Xtest_matrix.pkl  # TF-IDF matrix for test data
+│   │   │   📄 Xtrain_matrix.pkl  # TF-IDF matrix for training data
+│   │   │   📄 prdtypecode_mapping.csv  # Mapping of product type codes
+│   │   │   📄 prdtypecode_mapping.pkl  # Pickle version of the mapping
+│   │   │   📄 tfidf_vectorizer.pkl  # Saved TF-IDF vectorizer
+│   │   │   📄 y_train_encoded.pkl  # Encoded target labels for text
+│   │   📂 images/  # 📌 Processed image data
+│   │   │   📂 resized/  # 📌 Resized images (ready for CNNs or other models)
+│   │   │   │   📂 image_train/  # Resized training images
+│   │   │   │   │   🖼️ image_001.jpg
+│   │   │   │   │   🖼️ image_002.jpg
+│   │   │   │   │   🖼️ image_003.jpg
+│   │   │   │   │   ...
+│   │   │   │   📂 image_test/  # Resized test images
+│   │   │   │   │   🖼️ image_101.jpg
+│   │   │   │   │   🖼️ image_102.jpg
+│   │   │   │   │   🖼️ image_103.jpg
+│   │   │   │   │   ...
+│   │   │   📂 features/  # 📌 Extracted image features (for ML models)
+│   │   │   │   📄 cnn_features_train.pkl  # CNN-extracted features for training
+│   │   │   │   📄 cnn_features_test.pkl  # CNN-extracted features for testing
+│   │   │   │   📄 hog_features.pkl  # Features extracted using HOG
+│   │   │   │   📄 sift_features.pkl  # Features extracted using SIFT
+│   │   │   │   📄 pca_images.pkl  # PCA components for image dimensionality reduction
+│   │   │   │   📄 y_train_images.pkl  # Encoded target labels for images
+│   │   📄 y_train_final.pkl  # Final target labels (combined text + images)
+│   📂 raw_csv/  # 📌 Raw CSV files containing text and metadata
+│   │   📄 X_test_update.csv  # Raw test dataset (text + metadata)
+│   │   📄 X_train_update.csv  # Raw training dataset (text + metadata)
+│   │   📄 Y_train_CVw08PX.csv  # Raw training labels
+│   📂 raw_images/  # 📌 Raw image data (original images)
+│   │   📂 image_test/  # Unprocessed test images
+│   │   │   🖼️ image_1000095714_product_345301179.jpg
+│   │   │   🖼️ image_1000139370_product_353636820.jpg
+│   │   │   🖼️ image_1000221680_product_353626686.jpg
+│   │   │   ...
+│   │   📂 image_train/  # Unprocessed training images
+│   │   │   🖼️ image_1000076039_product_580161.jpg
+│   │   │   🖼️ image_1000089455_product_348990858.jpg
+│   │   │   🖼️ image_1000092894_product_353108104.jpg
+│   │   │   ...
+📂 models/  # 📌 Trained models and saved weights
+│ 
+├── text/
+│   ├── classical/         # Modèles classiques (SVM, Random Forest, XGBoost, etc.)
+│   └── neural/            # Modèles neuronaux (RNN, DNN, etc.)
+└── image/                 # Dossier séparé pour les modèles liés aux images
+│ 
+📂 notebooks/  # 📌 Jupyter notebooks for data exploration, preprocessing, and modeling
+│   📂 eda_and_processing/  # Exploratory Data Analysis & Preprocessing
+│   📂 modeling/  # Machine learning models
+│   │   📂 bimodal/  # Multi-modal models combining text and image
+│   │   │   📄 7_Model_Combination.ipynb
+│   │   📂 image/  # Image modeling notebooks
+│   │   │   📄 6_Image_Modeling.ipynb
+│   │   📂 text/  # Text modeling notebooks
+│   │   │   📄 6_Text_Modeling.ipynb
+│   │   │   📄 7_ML_Text_Classification.ipynb
+│   │   │   📄 7_ML_Text_Classification_V00.ipynb
+│   │   │   📄 DL_RNN_GRU_CELL.ipynb
+│   │   │   📄 DL_RNN_Conv1D.ipynb
+│   │   │   📄 DL_RNN_LSTM_CELL.ipynb
+│   │   │   📄 DL_Simple_DNN.ipynb
+│   │   │   📄 Machine_learning_model_and_Parameters.ipynb
+│   │   │   📄 Tooba_ML_Logistic_SVM_RandomForest_Voting_XGBOOST_LinearSVC.ipynb
+│   │   │   📄 iTFIDF_matrix.ipynb
+│   📄 utils_remplace_Variable_name.ipynb
+📂 references/  # 📌 Research papers, documentation, and external resources
+📂 reports/  # 📌 Project reports and figures
+│   📂 figures/  # 📌 Visualizations, plots, and charts
+│   📄 final_report.md  # 📌 Final technical report
+📄 requirements.txt  # 📌 Python dependencies for the project
+📂 src/  # 📌 Python scripts for data processing and model training
+│   📂 app/  # Application scripts (e.g., Streamlit, Flask API)
+│   📂 data_acquisition/  # Scripts for data fetching and ingestion
+│   📂 data_preprocessing/  # Data cleaning and transformation scripts
+│   📂 model_combination/  # Fusion of text and image models
+│   📂 modeling_image/  # Image model training scripts
+│   📂 modeling_text/  # Text model training scripts
+📂 utilis/  # 📌 Utility scripts
+│   📄 Structure_repository.txt  # Repository structure documentation
+│   📄 create_DS_project_structure.py  # Script to generate project structure
+│   📄 directory_tree_last.py  # Last version of the directory listing script
+│   📄 jupyter_notebook_config.py.lnk  # Jupyter Notebook config
+│   📄 launch_jupyter.bat  # Script to launch Jupyter Notebook
+
+
+**********************************************************************
+ACTUEL : Généré par :  With D:\Data_Science\Append_Data_Engineer_AWS_MLOPS\Data_Scientist_Rakuten_Project-main\utilis\directory_tree_last.py
+
+
+**********************************************************************
+
+
+📂 Listing contents of: D:\Data_Science\Append_Data_Engineer_AWS_MLOPS\Data_Scientist_Rakuten_Project-main
+
+📄 LICENSE
+📄 README.md
+📂 data/
+│   📂 interim/
+│   │   📄 X_full_train.pkl
+│   │   📄 X_test.pkl
+│   │   📄 X_test_cleaned.pkl
+│   │   📄 X_test_img.pkl
+│   │   📄 X_train_cleaned.pkl
+│   │   📄 X_train_img.pkl
+│   │   📄 X_train_labeled.pkl
+│   │   📄 y_train.pkl
+│   📂 processed/
+│   │   📄 X_test_final.pkl
+│   │   📄 X_train_final.pkl
+│   │   📂 text/
+│   │   │   📄 Xtest_matrix.pkl
+│   │   │   📄 Xtrain_matrix.pkl
+│   │   │   📄 prdtypecode_mapping.csv
+│   │   │   📄 prdtypecode_mapping.pkl
+│   │   │   📄 tfidf_vectorizer.pkl
+│   │   │   📄 y_train_encoded.pkl
+│   │   📄 y_train_final.pkl
+│   📂 raw/
+│   │   📂 images/
+│   │   │   📂 image_test/
+│   │   │   │   🖼️ image_1000095714_product_345301179.jpg
+│   │   │   │   🖼️ image_1000139370_product_353636820.jpg
+│   │   │   │   🖼️ image_1000221680_product_353626686.jpg
+│   │   │   │   ...
+│   │   │   📂 image_train/
+│   │   │   │   🖼️ image_1000076039_product_580161.jpg
+│   │   │   │   🖼️ image_1000089455_product_348990858.jpg
+│   │   │   │   🖼️ image_1000092894_product_353108104.jpg
+│   │   │   │   ...
+│   │   📂 text/
+│   │   │   📄 X_test_update.csv
+│   │   │   📄 X_train_update.csv
+│   │   │   📄 Y_train_CVw08PX.csv
+📂 models/
+📂 notebooks/
+│   📂 .ipynb_checkpoints/ [Non-empty folder]
+│   📂 eda_and_processing/
+│   │   📂 .ipynb_checkpoints/ [Non-empty folder]
+│   │   📄 1_Data_Acquisition.ipynb
+│   │   📄 1_Project_and_Data_Overview.ipynb
+│   │   📄 2_CSV_Exploration_and_Visualization.ipynb
+│   │   📄 3_Image_Exploration_and_Visualization.ipynb
+│   │   📄 4_Text_Cleaning.ipynb
+│   │   📄 5_WordClouds_for_Text_Product_Categories.ipynb
+│   │   📄 6_Text_vectorization_tfidf.ipynb
+│   📂 modeling/
+│   │   📂 bimodal/
+│   │   │   📄 7_Model_Combination.ipynb
+│   │   📂 image/
+│   │   │   📄 6_Image_Modeling.ipynb
+│   │   📂 text/
+│   │   │   📂 .ipynb_checkpoints/ [Non-empty folder]
+│   │   │   📄 6_Text_Modeling.ipynb
+│   │   │   📄 7_ML_Text_Classification.ipynb
+│   │   │   📄 7_ML_Text_Classification_V00.ipynb
+│   │   │   📄 DL_RNN GRU_CELL.ipynb
+│   │   │   📄 DL_RNN_Conv1D.ipynb
+│   │   │   📄 DL_RNN_LSTM_CELL.ipynb
+│   │   │   📄 DL_Simple_DNN.ipynb
+│   │   │   📄 Machine learning_model_and_Parametrs.ipynb
+│   │   │   📄 Tooba_ML_Logistic_R_SVM_Random_Forest_C_Voting_C_XGBOOST_Linear_SVC.ipynb
+│   │   │   📄 iTFIDF_matrix.ipynb
+│   📄 utils_remplace_Variable_name.ipynb
+📂 references/
+📂 reports/
+│   📂 figures/
+│   📄 final_report.md
+📄 requirements.txt
+📂 src/
+│   📂 app/
+│   📂 data_acquisition/
+│   📂 data_preprocessing/
+│   📂 model_combination/
+│   📂 modeling_image/
+│   📂 modeling_text/
+📂 utilis/
+│   📄 Structure_repository.txt
+│   📄 create_DS_project_structure.py
+│   📄 directory_tree_last.py
+│   📄 jupyter_notebook_config.py.lnk
+│   📄 launch_jupyter.bat
