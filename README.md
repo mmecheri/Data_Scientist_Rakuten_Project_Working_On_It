@@ -1,5 +1,8 @@
 # Data Scientist Rakuten Project - Work in Progress
 
+## Project Status  
+This project is currently **under development**. The goal is to refine and improve the existing model for multimodal product classification. Updates will be made progressively as enhancements are implemented.
+
 ## Streamlit Application  
 The first version of the **interactive Streamlit application**, which presents the project, different modeling steps, and results, is hosted on Hugging Face:  
 [**Rakuten Streamlit App**](https://huggingface.co/spaces/mmecheri/Rakuten_Streamlit)  
@@ -10,8 +13,6 @@ In the **Demo** section of the application, users can make their own predictions
 This project focuses on **multimodal product classification** for Rakuten France. The goal is to predict product category codes (`prdtypecode`) using both **text** (product title & description) and **image** (product images) data.  
 
 Originally developed as part of a **challenge** in a Data Scientist training program, this repository is a **work in progress** aimed at improving previous implementations and optimizing the classification model.  
-
-**Current Status:** The project is undergoing improvements, with updates coming soon.  
 
 ## Objectives  
 - Improve classification accuracy beyond the initial baseline models.  
