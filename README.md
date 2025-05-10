@@ -1,74 +1,106 @@
-# Data Scientist Rakuten Project - Work in Progress
+# 🛒 Multimodal Product Classification – Rakuten France  
+**Advanced Deep Learning Project | Text + Image | Voting Ensemble | AWS-Ready Deployment**
 
-## Project Status  
-This project is currently **under development**. The goal is to **restructure the project and codebase** to enable **deployment on AWS Cloud** while refining and improving the existing model for multimodal product classification. Updates will be made progressively as enhancements are implemented.
+---
 
-## Streamlit Application  
-The first version of the **interactive Streamlit application**, which presents the project, different modeling steps, and results, is hosted on Hugging Face:  
-[**Rakuten Streamlit App**](https://huggingface.co/spaces/mmecheri/Rakuten_Streamlit)  
+## 🚀 Overview
 
-In the **Demo** section of the application, users can make their own predictions using **text, images, or a combination of both**.  
+This project addresses the challenge of classifying products into categories (`prdtypecode`) based on **textual descriptions and product images**, using advanced **multimodal deep learning techniques**.
 
-## Project Overview  
-This project focuses on **multimodal product classification** for Rakuten France. The goal is to predict product category codes (`prdtypecode`) using both **text** (product title & description) and **image** (product images) data.  
+It began as part of a data science challenge and evolved into a production-ready, AWS-compatible pipeline with modules for preprocessing, modeling, ensemble voting, and prediction.
 
-Originally developed as part of a **challenge** in a Data Scientist training program, this repository is a **work in progress** aimed at improving previous implementations and optimizing the classification model.  
+👉 Try it live: [**Rakuten Streamlit Demo**](https://huggingface.co/spaces/mmecheri/Rakuten_Streamlit)
 
-## Objectives  
-- Improve classification accuracy beyond the initial baseline models.  
-- Optimize **text-based** classification using machine learning and deep learning.  
-- Enhance **image-based** classification using convolutional neural networks (CNNs) and transfer learning.  
-- Develop a robust **bimodal approach** combining both text and image models.  
-- **Restructure and optimize the project for deployment on AWS Cloud**.  
+---
 
-## Dataset  
-Rakuten France provides a dataset of approximately **99,000 product listings**, split into:  
-- `X_train_update.csv`: Training data with product descriptions and image references.  
-- `y_train_CVw08PX.csv`: Target labels (`prdtypecode`).  
-- `X_test_update.csv`: Test data for evaluation.  
-- `images.zip`:  
-  - `image_train/` (84,916 images)  
-  - `image_test/` (13,812 images)  
+## 🎯 Objectives
 
-## Modeling Approach  
+- Achieve high product classification accuracy using real-world multimodal data  
+- Leverage deep learning for both **text** and **image** inputs  
+- Combine models using ensemble voting strategies  
+- Prepare for scalable **cloud deployment (AWS-ready)**  
+- Deliver reusable, modular, and well-documented code
 
-### Text-Based Classification  
-- **Traditional Machine Learning**: Initial tests with **TF-IDF + ML classifiers**.  
-- **Deep Learning**: Models tested include **Conv1D, LSTMs, and DNNs**.  
-- **Best Performance**: Conv1D and DNN achieved the highest F1-score.  
+---
 
-### Image-Based Classification  
-- **CNNs & Transfer Learning**: Models trained using **ResNet, Xception, and InceptionV3**.  
-- **Best Performance**: Identified top models for further fine-tuning.  
+## 🧠 Approach Summary
 
-### Multimodal (Text + Image) Classification  
-- **Ensemble Strategy**: Voting-based combination of text and image models.  
-- **Voting Methods Applied**: Hard Voting, Soft Voting, Weighted Soft Voting, and Max Confidence Voting.  
-- **Best Performing Setup**: The combination of **Simple DNN, Conv1D, and Xception**, using **Weighted Soft Voting**, delivered the best performance based on the weighted F1-score.
+### 📄 Text-Based Models
+- Classical: TF-IDF + XGBoost, Logistic Regression  
+- Deep Learning: Simple DNN, Conv1D, GRU, LSTM  
+- ✅ Best results: Conv1D and Simple DNN (F1 > 0.81)
 
-## Work in Progress & Next Steps  
-- Improving text-based feature engineering.  
-- Fine-tuning image models and exploring data augmentation.  
-- Enhancing bimodal fusion strategies for better classification.  
-- Deploying an updated interactive **Streamlit demo** (coming soon).  
-- **Adapting and restructuring the project for cloud deployment on AWS**.  
+### 🖼️ Image-Based Models
+- Transfer learning with ResNet, Xception, InceptionV3, EfficientNet  
+- Fine-tuning and data augmentation applied  
+- ✅ Best model: Xception (F1 ≈ 0.66)
 
-## Baseline Results  
-| Model | Data Type | Weighted F1-score |  
-|------------|------------|----------------|  
-| **RNN** | Text | 0.8113 |  
-| **ResNet** | Images | 0.5534 |  
-| **Best Multimodal (Initial Submission)** | Text + Image | **0.8349** (Rank #25/83) |  
+### 🔁 Multimodal Voting Ensemble
+- Fuses predictions from best text and image models  
+- Voting strategies:
+  - Hard Voting  
+  - Soft Voting  
+  - Weighted Soft Voting *(based on per-model F1)*  
+  - Max Confidence Voting  
+- ✅ Best configuration: **DNN + Conv1D + Xception** using **Weighted Soft Voting**
 
-**Goal:** Improve beyond **0.8349** F1-score with optimized models and deploy them on AWS.  
+---
 
-## How to Use (Once Ready)  
-Since this project is still under development, the full pipeline is not yet finalized. Once the improvements are completed, the repository will include:  
-- Code for training and evaluating models.  
-- Scripts for preprocessing and feature engineering.  
-- Instructions to reproduce experiments.   
-- **Steps for AWS deployment** including model serving and API setup.  
+## 📊 Results
 
-## Stay Updated  
-This project is actively being improved. Check back for updates.  
+| Model Setup                        | Modality     | Weighted F1-score |
+|-----------------------------------|--------------|-------------------|
+| TF-IDF + XGBoost                  | Text         | 0.802             |
+| Simple DNN                        | Text         | 0.810             |
+| Xception                          | Image        | 0.660             |
+| **DNN + Conv1D + Xception (Ensemble)** | Text + Image | **0.8349**        |
 
+📌 Initial leaderboard: **Ranked #25 / 83 submissions**
+
+---
+
+## 🗂️ Project Structure
+
+```bash
+Data_Scientist_Rakuten_Project/
+├── config.py                      # Centralized configuration paths
+├── data/                          # Raw, interim, and processed datasets
+├── models/                        # Pretrained models for text and image (final, tuned, benchmark)
+├── notebooks/                     # Jupyter notebooks (EDA, modeling, ensemble, submission)
+├── reports/                       # Model evaluation reports (XLSX, charts)
+├── src/                            # Core Python modules for data loading, model loading/training, ensemble voting, reporting, and CSV export
+├── submissions/                   # Final CSV submission files
+└── requirements.txt               # Project dependencies
+
+---
+
+## ⚙️ How to Reproduce
+
+**Clone the repository:**
+```bash
+git clone https://github.com/your-username/Data_Scientist_Rakuten_Project.git
+cd Data_Scientist_Rakuten_Project
+
+**Install dependencies:**
+pip install -r requirements.txt
+
+**Ensure the data folder structure is complete (see config.py)**
+**Run the notebooks in order:**
+
+- `1_Project_and_Data_Overview.ipynb` – Project presentation and dataset structure  
+- `09_Benchmark_Text_Model.ipynb` – First text model baselines  
+- `14_Simple_DNN_for_Text_Classification.ipynb` – Deep learning model for text  
+- `16_Image_Benchmark_Model.ipynb` – First image model evaluation  
+- `22_Model_Combination.ipynb` – Multimodal ensemble with voting  
+- `23_Submission.ipynb` – Final predictions and CSV export
+
+## ☁️ AWS-Ready Deployment (In Progress)
+The project is being restructured for deployment on AWS, including:
+
+Model hosting via S3
+
+Inference via FastAPI / AWS Lambda
+
+Packaging with Docker
+
+(Future) CI/CD and monitoring integration
