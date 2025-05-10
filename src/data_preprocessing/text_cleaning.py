@@ -9,8 +9,8 @@ from nltk.corpus import stopwords
 #        GLOBAL SETTINGS        #
 # ----------------------------- #
 
-IS_DEBUG = True  # Enable debug messages
-
+# IS_DEBUG = True  # Enable debug messages
+IS_DEBUG = False  # Disable debug messages
 # ----------------------------- #
 #   TEXT CLEANING FUNCTIONS     #
 # ----------------------------- #

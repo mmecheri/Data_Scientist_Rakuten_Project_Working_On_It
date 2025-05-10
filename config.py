@@ -6,6 +6,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # 📂 Data directory
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
+# 📂 Data directory
+SUBMISSION_DIR = os.path.join(BASE_DIR, "submissions")
+
+
 # 📂 Raw Data Paths
 RAW_CSV_DIR = os.path.join(DATA_DIR, "raw_csv")  # Raw CSV files (metadata + text)
 RAW_IMAGES_DIR = os.path.join(DATA_DIR, "raw_images")  # Raw images (train/test)
@@ -25,12 +29,13 @@ PROCESSED_TEXT_DIR = os.path.join(PROCESSED_DIR, "text")
 
 # Text_Vectorization_TF-IDF
 XTRAIN_MATRIX_PATH = os.path.join(PROCESSED_TEXT_DIR, "Xtrain_matrix.pkl")
+XVAL_MATRIX_PATH = os.path.join(PROCESSED_TEXT_DIR, "Xval_matrix.pkl")
 XTEST_MATRIX_PATH = os.path.join(PROCESSED_TEXT_DIR, "Xtest_matrix.pkl")
 TFIDF_VECTORIZER_PATH = os.path.join(PROCESSED_TEXT_DIR, "tfidf_vectorizer.pkl")
 
 #The encoded labels (0-26) and their original product code classes
 YTRAIN_ENCODED_PATH = os.path.join(PROCESSED_TEXT_DIR, "y_train_encoded.pkl")
-PRDTYPECODE_MAPPING_PATH = os.path.join(PROCESSED_TEXT_DIR, "prdtypecode_mapping.pkl")
+PRDTYPECODE_MAPPING_PATH = os.path.join(PROCESSED_DIR, "prdtypecode_mapping.pkl")
 
 # Text Tokenization_and_Sequencing
 TOKENIZER_PATH =  os.path.join(PROCESSED_TEXT_DIR, "tokenizer.pkl")
@@ -74,8 +79,36 @@ CLASSICAL_MODELS_DIR = os.path.join(TEXT_MODELS_DIR, "classical")
 # 📂 Neural models
 NEURAL_MODELS_DIR = os.path.join(TEXT_MODELS_DIR, "neural")
 
+# 📂 Benchmak text model
+BENCHMARK_TEXT_MODEL_DIR = os.path.join(TEXT_MODELS_DIR, "benchmark")
+
+
 # 📂 Image Models directory
 IMAGE_MODELS_DIR = os.path.join(MODELS_DIR, "image")
+
+# 📂 Benchmak image model
+BENCHMARK_IMG_MODEL_DIR = os.path.join(IMAGE_MODELS_DIR, "benchmark")
+
+# 📂 Subdirectories for Image Models (steps of training pipeline)
+# 📂 Data Augmentation
+DATA_AUGMENTATION_DIR = os.path.join(IMAGE_MODELS_DIR, "data_augmentation")
+
+# 📂 Fine-Tuning
+FINE_TUNING_DIR = os.path.join(IMAGE_MODELS_DIR, "fine_tuning")
+
+# 📂 Learning Rate Optimization
+LR_OPTIMIZATION_DIR = os.path.join(IMAGE_MODELS_DIR, "lr_optimization")
+
+# 📂 Final Training
+FINAL_TRAINING_DIR = os.path.join(IMAGE_MODELS_DIR, "final_training")
+
+
+# 📄 Best model filenames (Text + Image)
+BEST_TEXT_MODEL_CONV1D = "conv1d_text_model_model_v2.h5"
+BEST_TEXT_MODEL_DNN = "simple_DNN_text_model_model_V2.h5"
+BEST_IMAGE_MODEL_XCEPTION = "image_model_xception_v1.hdf5"
+BEST_IMAGE_MODEL_INCEPTION = "image_model_inceptionv3_v1.hdf5"
+
 
 # 📂 Notebooks directory
 NOTEBOOKS_DIR = os.path.join(BASE_DIR, "notebooks")

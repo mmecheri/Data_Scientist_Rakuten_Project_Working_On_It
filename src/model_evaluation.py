@@ -69,6 +69,10 @@ def process_classification_report(y_test, y_pred_classes, label_mapping_path):
     - Formats numerical columns
     - Extracts accuracy and summary rows
     """
+
+    if DEBUG:
+        print("[DEBUG] process_classification_report")
+
     classification_df, summary_rows = get_classification_df(y_test, y_pred_classes)
     mapping_df = load_label_mapping(label_mapping_path)
     classification_df = merge_classification_with_mapping(classification_df, mapping_df)
@@ -93,6 +97,7 @@ def process_classification_report(y_test, y_pred_classes, label_mapping_path):
     summary_rows["support"] = summary_rows["support"].astype(int)
 
     return classification_df, summary_rows, accuracy_value, accuracy_support
+    # return None, None, None, None
 
 def analyze_classification_performance(
     classification_df, 
