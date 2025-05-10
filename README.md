@@ -61,31 +61,38 @@ It began as part of a data science challenge and evolved into a production-ready
 
 ## 🗂️ Project Structure
 
-```bash
+```
 Data_Scientist_Rakuten_Project/
 ├── config.py                      # Centralized configuration paths
 ├── data/                          # Raw, interim, and processed datasets
 ├── models/                        # Pretrained models for text and image (final, tuned, benchmark)
 ├── notebooks/                     # Jupyter notebooks (EDA, modeling, ensemble, submission)
 ├── reports/                       # Model evaluation reports (XLSX, charts)
-├── src/                            # Core Python modules for data loading, model loading/training, ensemble voting, reporting, and CSV export
+├── src/                           # Core Python modules for data loading, model loading/training, ensemble voting, reporting, and CSV export
 ├── submissions/                   # Final CSV submission files
 └── requirements.txt               # Project dependencies
+```
 
 ---
 
 ## ⚙️ How to Reproduce
 
 **Clone the repository:**
+
 ```bash
 git clone https://github.com/your-username/Data_Scientist_Rakuten_Project.git
 cd Data_Scientist_Rakuten_Project
+```
 
 **Install dependencies:**
-pip install -r requirements.txt
 
-**Ensure the data folder structure is complete (see config.py)**
-**Run the notebooks in order:**
+```bash
+pip install -r requirements.txt
+```
+
+**Ensure the data folder structure is complete** (see `config.py`)
+
+**Run the notebooks in logical order**, for example:
 
 - `1_Project_and_Data_Overview.ipynb` – Project presentation and dataset structure  
 - `09_Benchmark_Text_Model.ipynb` – First text model baselines  
@@ -94,13 +101,53 @@ pip install -r requirements.txt
 - `22_Model_Combination.ipynb` – Multimodal ensemble with voting  
 - `23_Submission.ipynb` – Final predictions and CSV export
 
+---
+
 ## ☁️ AWS-Ready Deployment (In Progress)
-The project is being restructured for deployment on AWS, including:
 
-Model hosting via S3
+The project is being restructured for full deployment on **AWS cloud**, with a focus on automation, scalability, and monitoring. The target architecture includes:
 
-Inference via FastAPI / AWS Lambda
+- **🛠️ Data Pipeline & Orchestration**  
+  - Data extraction, transformation, and storage via **Lambda**, **AWS Glue**, and **S3**  
+  - Model training orchestrated using **SageMaker Pipelines**, leveraging deep learning models (RNNs, CNNs)
 
-Packaging with Docker
+- **📦 Infrastructure as Code & Containerization**  
+  - Infrastructure provisioning via **AWS CDK** or **CloudFormation**  
+  - Containerized deployments using **Docker** and **EKS** (Kubernetes)
 
-(Future) CI/CD and monitoring integration
+- **🌐 API, CI/CD & Monitoring**  
+  - Model serving with **FastAPI** and **API Gateway**  
+  - CI/CD pipelines via **GitHub Actions**  
+  - Model tracking and logging with **MLflow** and **CloudWatch**
+
+🔁 *Note: While a separate MLOps project already includes FastAPI-based APIs, the deployment plan here aims to integrate those skills into a multimodal deep learning pipeline for production inference.*
+
+---
+
+## 🛠️ Tech Stack
+
+- **Languages**: Python 3.8.13, Jupyter,  
+- **Libraries**: TensorFlow, scikit-learn, OpenCV, Pandas, Matplotlib  
+- **Models**: CNNs, RNNs, Transfer Learning, Voting Ensembles  
+- **Tools**: Streamlit, Hugging Face, AWS-ready structure  
+
+---
+
+## 👤 Author
+
+🔗 [https://www.linkedin.com/in/mouradmecheri/](https://www.linkedin.com/in/mouradmecheri/)
+
+---
+
+## ⭐ Future Enhancements
+
+- Incorporate **BERT-based embeddings** for text  
+- Experiment with **image transformers** (ViT, Swin)  
+- Refactor into **production APIs** with monitoring  
+- Deploy full pipeline on **AWS** (model + API + frontend)
+
+---
+
+> 🧪 *This project is part of an advanced data science training challenge and continues to evolve toward full production-readiness.*
+
+📅 Last updated: **2025-05-10**
