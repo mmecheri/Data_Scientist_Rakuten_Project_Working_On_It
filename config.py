@@ -47,7 +47,6 @@ Y_TEST_SPLIT_PATH =  os.path.join(PROCESSED_TEXT_DIR, "y_test_split.pkl")
 X_SUBMISSION_TOKENIZED_PATH =  os.path.join(PROCESSED_TEXT_DIR, "X_submission_TokenizationSequencing.pkl")
 
 
-
 # 📂 Processed Image Data
 PROCESSED_IMAGES_DIR = os.path.join(PROCESSED_DIR, "images")
 RESIZED_IMAGE_DIR = os.path.join(PROCESSED_IMAGES_DIR, "resized")
@@ -127,24 +126,3 @@ IMAGE_REPORTS_DIR = os.path.join(CLASSIFICATION_REPORTS_DIR, "image")
 BIMODAL_REPORTS_DIR = os.path.join(CLASSIFICATION_REPORTS_DIR, "bimodal")
 
 
-# # 📂 AWS S3 Configuration (for Cloud Deployment)
-# S3_BUCKET_NAME = "my-ds-project-bucket"  # Replace with your S3 bucket name
-# S3_RAW_CSV_DIR = f"s3://{S3_BUCKET_NAME}/raw_csv/"
-# S3_RAW_IMAGES_DIR = f"s3://{S3_BUCKET_NAME}/raw_images/"
-# S3_PROCESSED_TEXT_DIR = f"s3://{S3_BUCKET_NAME}/processed/text/"
-# S3_PROCESSED_IMAGES_DIR = f"s3://{S3_BUCKET_NAME}/processed/images/"
-# S3_MODELS_DIR = f"s3://{S3_BUCKET_NAME}/models/"
-
-# 📌 Display loaded paths for verification
-if __name__ == "__main__":
-    print("✅ Configuration loaded successfully!")
-    print(f"🔹 Project Root: {BASE_DIR}")
-    print(f"📂 Data Directory: {DATA_DIR}")
-    print(f"📂 Raw CSV Path: {RAW_CSV_DIR}")
-    print(f"📂 Raw Images Path: {RAW_IMAGES_DIR}")
-    print(f"📂 Processed Text Path: {PROCESSED_TEXT_DIR}")
-    print(f"📂 Processed Image Features Path: {IMAGE_FEATURES_DIR}")
-    print(f"📂 Final Train Dataset Path: {XTRAIN_FINAL_PATH}")
-    print(f"📂 Models Directory: {MODELS_DIR}")
-    # print('X_TRAIN_TOKENIZED_PATH',X_TRAIN_TOKENIZED_PATH)  # This should print the correct path for X_train
-    # print(f"☁️ AWS S3 Bucket: {S3_BUCKET_NAME}")
