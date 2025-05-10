@@ -26,13 +26,18 @@ Originally developed as part of a **Data Scientist training challenge**, the pro
 ## 🧠 Approach Summary
 
 ### 📄 Text-Based Models
-- Classical: TF-IDF + XGBoost, Logistic Regression  
-- Deep Learning: Simple DNN, Conv1D, GRU, LSTM  
-- ✅ Best results: Conv1D and Simple DNN (F1 > 0.81)
+Extensive experimentation with both **classical ML algorithms** and **deep learning architectures**:  
+- Classical: Logistic Regression, SVM, Random Forest, KNN, Decision Tree, Linear SVC, XGBoost, Voting Classifier.  
+- Deep Learning: Conv1D, Simple DNN, GRU, BiLSTM — each tested with embeddings, regularization, and custom tuning.
+✅ Best models: **Conv1D** and **Simple DNN** with Weighted F1-scores > 0.81.
 
 ### 🖼️ Image-Based Models
-- Transfer learning with ResNet, Xception, InceptionV3, EfficientNet  
-- Fine-tuning and data augmentation applied  
+Comprehensive evaluation of **10+ pretrained CNN architectures** (e.g., ResNet50, Xception, EfficientNetB5, VGG16) using **transfer learning**, with a structured pipeline of:  
+- Baseline benchmarking  
+- Data augmentation  
+- Layer-wise fine-tuning  
+- Learning rate scheduling  
+- Final training refinements
 - ✅ Best model: Xception (F1 ≈ 0.66)
 
 ### 🔁 Multimodal Voting Ensemble
