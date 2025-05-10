@@ -42,8 +42,9 @@ Rakuten France provides a dataset of approximately **99,000 product listings**, 
 - **Best Performance**: Identified top models for further fine-tuning.  
 
 ### Multimodal (Text + Image) Classification  
-- **Voting Ensemble Methods**: Max Voting and Weighted Average.  
-- **Best Configuration**: A combination of **Conv1D, Simple DNN, and InceptionV3** achieved the highest accuracy.  
+- **Ensemble Strategy**: Voting-based combination of text and image models.  
+- **Voting Methods Applied**: Hard Voting, Soft Voting, Weighted Soft Voting, and Max Confidence Voting.  
+- **Best Performing Setup**: The combination of **Simple DNN, Conv1D, and Xception**, using **Weighted Soft Voting**, delivered the best performance based on the weighted F1-score.
 
 ## Work in Progress & Next Steps  
 - Improving text-based feature engineering.  
