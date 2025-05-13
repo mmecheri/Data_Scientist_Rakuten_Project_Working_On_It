@@ -68,14 +68,49 @@ Comprehensive evaluation of **10+ pretrained CNN architectures** (e.g., ResNet50
 
 ```
 Data_Scientist_Rakuten_Project/
-├── config.py                      # Centralized configuration paths
-├── data/                          # Raw, interim, and processed datasets
-├── models/                        # Pretrained models for text and image (final, tuned, benchmark)
-├── notebooks/                     # Jupyter notebooks (EDA, modeling, ensemble, submission)
-├── reports/                       # Model evaluation reports (XLSX, charts)
-├── src/                           # Core Python modules for data loading, model loading/training, ensemble voting, reporting, and CSV export
-├── submissions/                   # Final CSV submission files
-└── requirements.txt               # Project dependencies
+├── config.py # Centralized config for paths and global constants
+├── requirements.txt # List of Python dependencies
+
+├── data/ # All datasets used in the project
+│ ├── raw_csv/ # Raw CSV files (train/test/product labels)
+│ ├── raw_images/ # Original product images from Rakuten
+│ ├── interim/ # Intermediate cleaned data (pre-tokenized, unencoded)
+│ └── processed/ # Final processed data ready for model input (encoded, padded, vectorized)
+
+├── models/ # Saved model checkpoints and experiments
+│ ├── image/ # Image-based models (CNNs)
+│ │ ├── benchmark/ # Baseline CNN models
+│ │ ├── data_augmentation/ # Models trained with augmented images
+│ │ ├── fine_tuning/ # Fine-tuned models
+│ │ ├── lr_optimization/ # Learning rate tuning outputs
+│ │ └── final_training/ # Final image models for submission
+│ └── text/ # Text-based classification models
+│ ├── benchmark/ # Baseline CNNs using text only
+│ ├── classical/ # Classical ML models (SVM, XGBoost, etc.)
+│ └── neural/ # Deep learning models (LSTM, GRU, DNN)
+
+├── notebooks/ # Jupyter Notebooks used for exploration and experimentation
+│ ├── 1_Project_and_Data_Overview.ipynb # Global introduction and dataset overview
+│ ├── eda_and_processing/ # EDA, data cleaning, preprocessing
+│ └── modeling/ # Modeling notebooks grouped by modality
+│ ├── text/ # Text classification models (ML + DL)
+│ ├── image/ # Image classification models (CNNs)
+│ └── bimodal/ # Text + Image model combination strategies
+
+├── reports/ # Performance reports and visual results
+│ ├── classification_reports/ # Evaluation metrics for each model (accuracy, F1-score, etc.)
+│ └── figures/ # Plots: learning curves, confusion matrices, etc.
+
+├── src/ # Source code for training, evaluation, and prediction
+│ ├── data_acquisition/ # Scripts for loading data
+│ ├── data_preprocessing/ # Text/image cleaning, splitting, tokenization
+│ ├── modeling_text/ # Building and training text models
+│ ├── modeling_image/ # CNN model building, tuning, training
+│ ├── model_combination/ # Model combination and voting strategies
+│ ├── model_inference/ # Scripts to load models, combine predictions, apply voting and generate final predictions
+│ └── utils/ # General utilities: visualization, export, label mapping
+
+├── submissions/ # Final .csv files submitted to Rakuten challenge
 ```
 
 ---
