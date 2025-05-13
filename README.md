@@ -79,23 +79,23 @@ Data_Scientist_Rakuten_Project/
 
 ├── models/ # Saved model checkpoints and experiments
 │ ├── image/ # Image-based models (CNNs)
-│ │ ├── benchmark/ # Baseline CNN models
+│ │ ├── benchmark/ # Reproduction of baseline CNN model from the challenge (used as reference)
 │ │ ├── data_augmentation/ # Models trained with augmented images
 │ │ ├── fine_tuning/ # Fine-tuned models
 │ │ ├── lr_optimization/ # Learning rate tuning outputs
-│ │ └── final_training/ # Final image models for submission
+│ │ └── final_training/ #Final image models training with optimized and tuned learning rates
 │ └── text/ # Text-based classification models
-│ ├── benchmark/ # Baseline CNNs using text only
+│ ├── benchmark/ # Reproduction of baseline RNN text model from the challenge (used as reference)
 │ ├── classical/ # Classical ML models (SVM, XGBoost, etc.)
-│ └── neural/ # Deep learning models (LSTM, GRU, DNN)
+│ └── neural/ # Deep learning models (LSTM, GRU, DNN, etc.)
 
-├── notebooks/ # Jupyter Notebooks used for exploration and experimentation
-│ ├── 1_Project_and_Data_Overview.ipynb # Global introduction and dataset overview
-│ ├── eda_and_processing/ # EDA, data cleaning, preprocessing
-│ └── modeling/ # Modeling notebooks grouped by modality
-│ ├── text/ # Text classification models (ML + DL)
-│ ├── image/ # Image classification models (CNNs)
-│ └── bimodal/ # Text + Image model combination strategies
+├── notebooks/                       # Jupyter Notebooks used for exploration and experimentation
+│   ├── 1_Project_and_Data_Overview.ipynb     # Global introduction and dataset overview
+│   ├── eda_and_processing/          # EDA, data cleaning, preprocessing
+│   └── modeling/                    # Modeling notebooks grouped by modality
+│       ├── text/                    # Text classification models (ML + DL)
+│       ├── image/                   # Image classification models (CNNs)
+│       └── bimodal/                 # Text + Image model combination strategies
 
 ├── reports/ # Performance reports and visual results
 │ ├── classification_reports/ # Evaluation metrics for each model (accuracy, F1-score, etc.)
