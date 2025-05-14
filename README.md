@@ -99,16 +99,21 @@ Data_Scientist_Rakuten_Project/
 
 ├── reports/ # Performance reports and visual results
 │ ├── classification_reports/ # Evaluation metrics for each model (accuracy, F1-score, etc.)
-│ └── figures/ # Plots: learning curves, confusion matrices, etc.
+│ └── figures/ # Data visualizations , etc.
 
-├── src/ # Source code for training, evaluation, and prediction
-│ ├── data_acquisition/ # Scripts for loading data
-│ ├── data_preprocessing/ # Text/image cleaning, splitting, tokenization
-│ ├── modeling_text/ # Building and training text models
-│ ├── modeling_image/ # CNN model building, tuning, training
-│ ├── model_combination/ # Model combination and voting strategies
-│ ├── model_inference/ # Scripts to load models, combine predictions, apply voting and generate final predictions
-│ └── utils/ # General utilities: visualization, export, label mapping
+├── src/  # Source code for training, evaluation, and prediction
+│   ├── data_acquisition/     # Scripts for loading data
+│   ├── data_preprocessing/   # Text/image cleaning, splitting, tokenization
+│   ├── modeling_text/        # Building and training text models
+│   ├── modeling_image/       # CNN model building, tuning, training
+│   ├── model_combination/    # Model combination and voting strategies
+│   └── model_inference/      # Load models, combine predictions, apply voting, and generate final output
+
+├── utils/  # General-purpose tools
+│   ├── display.py          # Display a structured DataFrame output
+│   ├── label_mapping.py    # Encode/decode class labels to product categories
+│   └── report_export.py    # Export model evaluation reports (e.g., Excel)
+
 
 ├── submissions/ # Final .csv files submitted to Rakuten challenge
 ```
