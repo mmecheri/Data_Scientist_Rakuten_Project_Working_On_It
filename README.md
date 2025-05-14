@@ -99,7 +99,7 @@ Data_Scientist_Rakuten_Project/
 
 ├── reports/ # Performance reports and visual results
 │ ├── classification_reports/ # Evaluation metrics for each model (accuracy, F1-score, etc.)
-│ └── figures/ # Data visualizations , etc.
+│ └── figures/ # Data visualizations, etc.
 
 ├── src/  # Source code for training, evaluation, and prediction
 │   ├── data_acquisition/     # Scripts for loading data
