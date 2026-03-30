@@ -9,7 +9,7 @@ This project addresses the challenge of classifying products into categories (`p
 
 Originally developed as part of a **Data Scientist training challenge**, the project was later **refactored into a clean, modular pipeline** designed with **AWS compatibility** in mind. It separates concerns across preprocessing, modeling, inference, and export, making it suitable for future large-scale deployment.
 
-👉 Try it live: [**Rakuten Streamlit Demo**](https://huggingface.co/spaces/mmecheri/Rakuten_Streamlit)
+👉 Try it live: [**Rakuten Streamlit Demo**](https://rakuten-multimodal-mmecheri.streamlit.app)
 
 ---
 
